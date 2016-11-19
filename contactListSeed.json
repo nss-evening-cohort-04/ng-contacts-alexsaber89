@@ -1,0 +1,34 @@
+{
+  "contacts": {
+    "contact0": {
+      "firstName": "Alex",
+      "lastName": "Saber",
+      "address": "276 White Bridge Pike, Apt. 28",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37209",
+      "email": "alexsaber89@gmail.com",
+      "phone": "9543367919"
+    },
+    "contact1": {
+      "firstName": "Mark",
+      "lastName": "Saber",
+      "address": "16251 Berlin Turnpike",
+      "city": "Purcellville",
+      "state": "VA",
+      "zip": "20132",
+      "email": "mjs1241@aol.com",
+      "phone": "9543368876"
+    },
+    "contact2": {
+      "firstName": "Jean",
+      "lastName": "Saber",
+      "address": "2421 NE 65 Street, Unit 106",
+      "city": "Fort Lauderdale",
+      "state": "FL",
+      "zip": "33308",
+      "email": "jeansaber99@yahoo.com",
+      "phone": "9548573823"
+    }
+  }
+}
