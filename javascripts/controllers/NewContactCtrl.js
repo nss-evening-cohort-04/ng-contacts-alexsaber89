@@ -14,7 +14,7 @@ app.controller("NewContactCtrl", function($scope, FirebaseContactsFactory) {
     newContact.zip = $scope.zip;
     newContact.email = $scope.email;
     newContact.phone = $scope.phone;
-    console.log("new contact: ", newContact);
+    FirebaseContactsFactory.postNewContact(newContact);
     $scope.first_name = "";
     $scope.last_name = "";
     $scope.address = "";

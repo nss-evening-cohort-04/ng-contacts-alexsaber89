@@ -3,11 +3,15 @@
 app.controller("ContactsListCtrl", function($scope, FirebaseContactsFactory) {
   $scope.contacts = [];
 
-  let getContacts = function() {
+  let getFirebaseContacts = function() {
     FirebaseContactsFactory.getContactsList().then(function (fbContacts) {
-      $scope.contacts = fbContacts;
-      console.log("contacts: ", $scope.contacts);
+      displayFirebaseContacts(fbContacts);
     });
   };
-  getContacts();
+
+  let displayFirebaseContacts = function(fbContacts) {
+    $scope.contacts = fbContacts;
+    console.log("contacts: ", $scope.contacts);
+  };
+  getFirebaseContacts();
 });

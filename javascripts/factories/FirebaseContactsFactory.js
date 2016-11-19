@@ -1,6 +1,7 @@
 'use strict';
 
 app.factory("FirebaseContactsFactory", function($q, $http, FIREBASE_CONFIG) {
+
   var getContactsList = function() {
     return $q((resolve, reject) => {
       $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts.json`)
@@ -18,5 +19,20 @@ app.factory("FirebaseContactsFactory", function($q, $http, FIREBASE_CONFIG) {
     });
   };
 
-  return {getContactsList};
+  var postNewContact = function(newContact) {
+    return $q((resolve, reject) => {
+      $http.post(`${FIREBASE_CONFIG.databaseURL}/contacts.json`,
+      JSON.stringify(newContact)
+    )
+      .success(function(postResponse) {
+        resolve(postResponse);
+        console.log("post successful: ", postResponse);
+      })
+      .error(function(postError) {
+        reject(postError);
+      });
+    });
+  };
+
+  return {getContactsList, postNewContact};
 });
