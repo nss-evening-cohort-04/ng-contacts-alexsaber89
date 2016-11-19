@@ -22,53 +22,53 @@
         </div>
       </div><!-- #contacts_list -->
 
-      <div id="add_contact" class="col s12"><!-- ng-controller="NavCtrl" -->
+      <div id="add_contact" class="col s12" ng-controller="NewContactCtrl">
         <div class="row">
           <form class="col s6 offset-s3">
             <div class="row">
               <div class="input-field col s6">
-                <input id="first_name" type="text" class="validate">
+                <input id="first_name" type="text" class="validate" ng-model="first_name">
                 <label for="first_name">First Name</label>
               </div>
               <div class="input-field col s6">
-                <input id="last_name" type="text" class="validate">
+                <input id="last_name" type="text" class="validate" ng-model="last_name">
                 <label for="last_name">Last Name</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="address" type="text" class="validate">
+                <input id="address" type="text" class="validate" ng-model="address">
                 <label for="address">Address</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s6">
-                <input id="city" type="text" class="validate">
+                <input id="city" type="text" class="validate" ng-model="city">
                 <label for="city">City</label>
               </div>
               <div class="input-field col s3">
-                <input id="state" type="text" class="validate">
+                <input id="state" type="text" class="validate" ng-model="state">
                 <label for="state">State</label>
               </div>
               <div class="input-field col s3">
-                <input id="zip" type="text" class="validate">
+                <input id="zip" type="text" class="validate" ng-model="zip">
                 <label for="zip">Zip</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
+                <input id="email" type="email" class="validate" ng-model="email">
                 <label for="email">Email</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="phone" type="text" class="validate">
+                <input id="phone" type="text" class="validate" ng-model="phone">
                 <label for="phone">Phone</label>
               </div>
             </div>
             <div class="row">
-              <button class="btn btn-primary add_btn col s6 offset-s3">Add Contact</button>
+              <button class="btn btn-primary add_btn col s6 offset-s3" ng-click="getNewContact()">Add Contact</button>
             </div>
           </form>
         </div><!-- .row -->
@@ -84,5 +84,6 @@
     <script type="text/javascript" src="/javascripts/AppConfig.js"></script>
     <script type="text/javascript" src="/javascripts/factories/FirebaseContactsFactory.js"></script>
     <script type="text/javascript" src="/javascripts/controllers/ContactsListCtrl.js"></script>
+    <script type="text/javascript" src="/javascripts/controllers/NewContactCtrl.js"></script>
   </body>
 </html>
