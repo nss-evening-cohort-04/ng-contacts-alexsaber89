@@ -1,7 +1,7 @@
 "use strict";
 
 app.controller("NewContactCtrl", function($scope, FirebaseContactsFactory) {
-
+  //Helper variables/functions
   let newContact = {};
   $scope.contacts = [];
   $scope.showAddContact = false;
@@ -19,6 +19,7 @@ app.controller("NewContactCtrl", function($scope, FirebaseContactsFactory) {
     console.log("contacts: ", $scope.contacts);
   };
 
+  //Main functionality
   let getFirebaseContacts = function() {
     FirebaseContactsFactory.getContactsList().then(function(fbContacts) {
       displayFirebaseContacts(fbContacts);
