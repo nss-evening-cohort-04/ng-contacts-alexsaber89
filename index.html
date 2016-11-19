@@ -9,20 +9,27 @@
   </head>
   <body ng-app="ContactsApp">
 
-    <div class="row">
-      <div class="col s12">
-        <ul class="tabs">
-          <li class="tab col s6"><a href="#contacts_list">Contacts List</a></li>
-          <li class="tab col s6"><a href="#add_contact">Add Contact</a></li>
-        </ul>
-      </div><!-- tabs header -->
-
-      <div id="contacts_list" class="col s12" ng-controller="ContactsListCtrl">
-        <div id="contacts_list_container">
+    <div class="col s12" ng-controller="NewContactCtrl">
+      <div id="contacts_list_container" ng-show="!showAddContact">
+        <div ng-repeat="contact in contacts">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="col-xs-1">{{contact.first_name}}</div>
+              <div class="col-xs-1">{{contact.last_name}}</div>
+              <div class="col-xs-2">{{contact.address}}</div>
+              <div class="col-xs-1">{{contact.city}}</div>
+              <div class="col-xs-1">{{contact.state}}</div>
+              <div class="col-xs-1">{{contact.zip}}</div>
+              <div class="col-xs-1">{{contact.email}}</div>
+              <div class="col-xs-1">{{contact.phone}}</div>
+              <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o"></button></div>
+            </div>
+          </div>
         </div>
-      </div><!-- #contacts_list -->
+        <button class="btn btn-primary" ng-click="showAddContactView()">Enter New Contact</button>
+      </div>
 
-      <div id="add_contact" class="col s12" ng-controller="NewContactCtrl">
+      <div id="add_contact" class="col s12" ng-show="showAddContact">
         <div class="row">
           <form class="col s6 offset-s3">
             <div class="row">
@@ -68,12 +75,12 @@
               </div>
             </div>
             <div class="row">
-              <button class="btn btn-primary add_btn col s6 offset-s3" ng-click="getNewContact()">Add Contact</button>
+              <button class="btn btn-primary add_btn col s6 offset-s3" ng-click="getNewContactThenPostNewContact()">Add Contact</button>
             </div>
           </form>
         </div><!-- .row -->
       </div><!-- #add_contact -->
-    </div><!-- full content div -->
+    </div><!-- #contacts_list -->
 
     <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
     <script type="text/javascript" src="/lib/node_modules/jquery/dist/jquery.min.js"></script>
@@ -83,7 +90,6 @@
     <script type="text/javascript" src="/javascripts/AppConstants.js"></script>
     <script type="text/javascript" src="/javascripts/AppConfig.js"></script>
     <script type="text/javascript" src="/javascripts/factories/FirebaseContactsFactory.js"></script>
-    <script type="text/javascript" src="/javascripts/controllers/ContactsListCtrl.js"></script>
     <script type="text/javascript" src="/javascripts/controllers/NewContactCtrl.js"></script>
   </body>
 </html>

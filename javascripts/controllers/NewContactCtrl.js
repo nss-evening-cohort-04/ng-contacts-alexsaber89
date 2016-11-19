@@ -3,6 +3,29 @@
 app.controller("NewContactCtrl", function($scope, FirebaseContactsFactory) {
 
   let newContact = {};
+  $scope.contacts = [];
+  $scope.showAddContact = false;
+
+  $scope.showAddContactView = function() {
+    $scope.showAddContact = true;
+  };
+
+  $scope.hideAddContactView = function() {
+    $scope.showAddContact = false;
+  };
+
+  let displayFirebaseContacts = function(fbContacts) {
+    $scope.contacts = fbContacts;
+    console.log("contacts: ", $scope.contacts);
+  };
+
+  let getFirebaseContacts = function() {
+    FirebaseContactsFactory.getContactsList().then(function(fbContacts) {
+      displayFirebaseContacts(fbContacts);
+    });
+  };
+
+  getFirebaseContacts();
 
   $scope.getNewContact = function() {
     newContact = {};
@@ -14,7 +37,6 @@ app.controller("NewContactCtrl", function($scope, FirebaseContactsFactory) {
     newContact.zip = $scope.zip;
     newContact.email = $scope.email;
     newContact.phone = $scope.phone;
-    FirebaseContactsFactory.postNewContact(newContact);
     $scope.first_name = "";
     $scope.last_name = "";
     $scope.address = "";
@@ -23,5 +45,13 @@ app.controller("NewContactCtrl", function($scope, FirebaseContactsFactory) {
     $scope.zip = "";
     $scope.email = "";
     $scope.phone = "";
+    $scope.showAddContact = false;
+  };
+
+  $scope.getNewContactThenPostNewContact = function() {
+    $scope.getNewContact();
+    FirebaseContactsFactory.postNewContact(newContact).then(function() {
+      getFirebaseContacts();
+    });
   };
 });
