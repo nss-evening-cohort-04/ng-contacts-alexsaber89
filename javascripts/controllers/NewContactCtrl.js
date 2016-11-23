@@ -1,18 +1,19 @@
 "use strict";
 
-app.controller("NewContactCtrl", function($scope, FirebaseContactsFactory) {
+app.controller("NewContactCtrl", function($scope, $location, $routeParams, FirebaseContactsFactory) {
   //Helper variables/functions
+  console.log("test");
   let newContact = {};
   $scope.contacts = [];
-  $scope.showAddContact = false;
-
-  $scope.showAddContactView = function() {
-    $scope.showAddContact = true;
-  };
-
-  $scope.hideAddContactView = function() {
-    $scope.showAddContact = false;
-  };
+  // $scope.showAddContact = false;
+  //
+  // $scope.showAddContactView = function() {
+  //   $scope.showAddContact = true;
+  // };
+  //
+  // $scope.hideAddContactView = function() {
+  //   $scope.showAddContact = false;
+  // };
 
   let displayFirebaseContacts = function(fbContacts) {
     $scope.contacts = fbContacts;

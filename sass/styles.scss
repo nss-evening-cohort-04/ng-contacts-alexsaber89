@@ -1,0 +1,20 @@
+//ng-cloak
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.grey {
+  background-color: grey;
+}
+
+.lightgrey {
+  background-color: lightgrey;
+}
+
+.contact-list-row {
+  margin-bottom: 5px;
+}
+
+.new-contact-btn {
+  margin: 5px;
+}

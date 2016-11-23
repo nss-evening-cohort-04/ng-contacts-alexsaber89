@@ -1,4 +1,5 @@
 lib/.sass-cache
 lib/node_modules
+lib/bower_components
 javascripts/AppConstants.js
 angular-contacts-d92d7-export.json
