@@ -1,13 +1,49 @@
-<button class="btn btn-primary new-contact-btn blue-grey darken-4" ng-click="showAddContactView()">Enter New Contact</button>
-<div ng-repeat="contact in contacts" ng-class-even="'grey'" ng-class-odd="'lightgrey'">
-  <div class="row contact-list-row">
-    <div class="col s2">{{contact.first_name}} {{contact.last_name}}</div>
-    <div class="col s3">{{contact.address}}</div>
-    <div class="col s2">{{contact.city}}, {{contact.state}} {{contact.zip}}</div>
-    <div class="col s2">{{contact.email}}</div>
-    <div class="col s2">{{contact.phone}}</div>
-    <div class="col s1 delete-btn-div">
-      <button class="btn btn-danger blue-grey darken-4 fa fa-trash-o"></button>
+<div class="row">
+  <form class="col s6 offset-s3">
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="first_name" type="text" class="validate" ng-model="first_name">
+        <label for="first_name">First Name</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="last_name" type="text" class="validate" ng-model="last_name">
+        <label for="last_name">Last Name</label>
+      </div>
     </div>
-  </div>
-</div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="address" type="text" class="validate" ng-model="address">
+        <label for="address">Address</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="city" type="text" class="validate" ng-model="city">
+        <label for="city">City</label>
+      </div>
+      <div class="input-field col s3">
+        <input id="state" type="text" class="validate" ng-model="state">
+        <label for="state">State</label>
+      </div>
+      <div class="input-field col s3">
+        <input id="zip" type="text" class="validate" ng-model="zip">
+        <label for="zip">Zip</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="email" type="email" class="validate" ng-model="email">
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="phone" type="text" class="validate" ng-model="phone">
+        <label for="phone">Phone</label>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn btn-primary add_btn col s6 offset-s3" ng-click="getNewContactThenPostNewContact()">Add Contact</button>
+    </div>
+  </form>
+</div><!-- .row -->

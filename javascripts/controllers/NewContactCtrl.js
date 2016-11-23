@@ -2,11 +2,14 @@
 
 app.controller("NewContactCtrl", function($scope, $location, $routeParams, FirebaseContactsFactory) {
   //Helper variables/functions
-  console.log("test");
   let newContact = {};
   $scope.contacts = [];
-  // $scope.showAddContact = false;
-  //
+  $scope.showAddContact = false;
+
+  $scope.showAddContactView = function() {
+    $location.url("/new-contact");
+  };
+
   // $scope.showAddContactView = function() {
   //   $scope.showAddContact = true;
   // };
@@ -18,6 +21,7 @@ app.controller("NewContactCtrl", function($scope, $location, $routeParams, Fireb
   let displayFirebaseContacts = function(fbContacts) {
     $scope.contacts = fbContacts;
     console.log("contacts: ", $scope.contacts);
+    $location.url("/contact-list");
   };
 
   //Main functionality
