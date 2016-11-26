@@ -26,7 +26,6 @@ app.factory("FirebaseContactsFactory", function($q, $http, FIREBASE_CONFIG) {
     )
       .success(function(postResponse) {
         resolve(postResponse);
-        console.log("post successful: ", postResponse);
       })
       .error(function(postError) {
         reject(postError);

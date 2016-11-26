@@ -13,7 +13,7 @@ app.config(function($routeProvider) {
     })
     .when('/contact-list', {
       templateUrl: 'partials/contact-list.html',
-      controller: 'NewContactCtrl'
+      controller: 'ContactListCtrl'
     })
     .otherwise('/contact-list');
 });

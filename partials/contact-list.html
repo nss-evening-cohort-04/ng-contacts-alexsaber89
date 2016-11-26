@@ -7,7 +7,7 @@
     <div class="col s2">{{contact.email}}</div>
     <div class="col s2">{{contact.phone}}</div>
     <div class="col s1 delete-btn-div">
-      <button class="btn btn-danger blue-grey darken-4 fa fa-trash-o"></button>
+      <button class="btn btn-danger blue-grey darken-4 fa fa-trash-o" ng-click="deleteContactThenReloadList(contact.id)"></button>
     </div>
   </div>
 </div>
